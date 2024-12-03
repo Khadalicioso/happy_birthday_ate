@@ -1,0 +1,328 @@
+:root {
+  --primary-yellow: #f5e6ca; /* Softer cream yellow */
+  --secondary-yellow: #f7d794; /* Muted golden yellow */
+  --background-yellow: #fff8e7; /* Very light cream */
+  --contrast-color: #2c1810; /* Keeping original contrast */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--background-yellow),
+    var(--primary-yellow)
+  );
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--primary-yellow),
+    var(--secondary-yellow)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.welcome-text {
+  font-size: 3.5rem;
+  color: var(--contrast-color);
+  text-align: center;
+  animation: bounce 2s infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.enter-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--contrast-color);
+  color: var(--primary-yellow);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.enter-button:hover {
+  transform: scale(1.1);
+}
+
+.main-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#toggleMusic {
+  padding: 0.5rem 1rem;
+  background-color: var(--contrast-color);
+  color: var(--primary-yellow);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.timer {
+  background-color: var(--contrast-color);
+  color: var(--primary-yellow);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+}
+
+.birthday-card {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  background: rgba(255, 215, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 235, 59, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.card-content h1 {
+  color: var(--contrast-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-content p {
+  color: var(--contrast-color);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.gift-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.gift-container img {
+  width: 100px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+.star-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+  animation: rotate 20s linear infinite;
+}
+
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.countdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--primary-yellow),
+    var(--secondary-yellow)
+  );
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.countdown-number {
+  font-size: 8rem;
+  color: var(--contrast-color);
+  animation: pulse 1s infinite;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.cake-container {
+  margin: 20px auto;
+  text-align: center;
+  max-width: 300px;
+}
+
+.cake-gif {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 2.5rem;
+  }
+
+  .birthday-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .card-content h1 {
+    font-size: 2rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+  }
+
+  .gift-container {
+    gap: 1rem;
+  }
+
+  .gift-container img {
+    width: 80px;
+  }
+
+  .star-img {
+    width: 120px;
+  }
+
+  .cake-container {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-text {
+    font-size: 2rem;
+  }
+
+  .enter-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .birthday-card {
+    padding: 1rem;
+  }
+
+  .gift-container img {
+    width: 60px;
+  }
+
+  .star-img {
+    width: 100px;
+  }
+
+  .cake-container {
+    max-width: 150px;
+  }
+}
