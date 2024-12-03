@@ -1,6 +1,8 @@
 # Interactive Birthday Celebration Webpage for my Ate 🎉
 
-![Birthday Celebration](images/cake.gif)
+<p align="center">
+  <img src="images/cake.gif" alt="Birthday Celebration">
+</p>
 
 An elegant, interactive web application designed to deliver personalized birthday wishes. This project combines modern web technologies with engaging animations to create a memorable digital birthday experience.
 
